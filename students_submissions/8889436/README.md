@@ -1,4 +1,4 @@
-# **Sudhan Shrestha! **
+# Sudhan Shrestha
 
 🎓 I recently graduated with a BSc. Honors in Computing and I'm ready to take on the world of AI and Data! 💻
 
