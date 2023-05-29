@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 AMANDEEP KAUR 
-=======
-AMANDEEP KAUR
->>>>>>> c5d837f03531b6e7e854d4e8b87a62eca0faffa9
