@@ -1,3 +1,6 @@
+# add vscode project folder
+.vs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
