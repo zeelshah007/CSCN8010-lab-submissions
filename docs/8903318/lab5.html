@@ -15119,7 +15119,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[222]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[318]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetes</span>
@@ -15153,7 +15153,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[223]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[319]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load diabetes dataset</span>
@@ -15174,7 +15174,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[223]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[319]:</div>
 
 
 
@@ -15381,47 +15381,27 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[224]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[320]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define polynomial model</span>
-<span class="k">def</span> <span class="nf">cross_val_polynomial</span><span class="p">(</span><span class="n">degree</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="p">),</span> <span class="n">LinearRegression</span><span class="p">())</span>
-    <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">Xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">)</span>
-    <span class="n">mse</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">)</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xdata</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">ydata</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">ydata</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">mse</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">mae</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[225]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create polynomial models ranging degree from 0 to 8</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">degrees</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">degrees</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
-<span class="n">cv_mse</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">cv_r2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">cv_mae</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">degree</span> <span class="ow">in</span> <span class="n">degrees</span><span class="p">:</span>
-    <span class="n">mse</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">mae</span> <span class="o">=</span> <span class="n">cross_val_polynomial</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
-    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">degree</span><span class="p">,</span> <span class="n">mse</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">mae</span><span class="p">))</span>
-    <span class="n">cv_mse</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
-    <span class="n">cv_r2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
-    <span class="n">cv_mae</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mae</span><span class="p">)</span>
+    <span class="n">poly_features</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">degree</span><span class="p">)</span>
+    <span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly_features</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xdata</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_poly</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;r2&#39;</span><span class="p">)</span>
+    <span class="n">mean_r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+    <span class="n">std_r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+    <span class="n">scores_mae</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">,</span> <span class="n">X_poly</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_absolute_error&#39;</span><span class="p">)</span>
+    <span class="n">mean_mae</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores_mae</span><span class="p">)</span>
+    <span class="n">std_mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores_mae</span><span class="p">)</span>
+
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">degree</span><span class="p">,</span> <span class="n">mean_r2</span><span class="p">,</span> <span class="n">std_r2</span><span class="p">,</span> <span class="n">mean_mae</span><span class="p">,</span> <span class="n">std_mae</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15445,14 +15425,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[226]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[321]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#cross validation results</span>
-<span class="n">df_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-    <span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Degree&#39;</span><span class="p">,</span> <span class="s1">&#39;MSE&#39;</span><span class="p">,</span> <span class="s1">&#39;R-Squared&#39;</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">])</span>
+<span class="n">results_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+                             <span class="s1">&#39;Degree&#39;</span><span class="p">,</span> <span class="s1">&#39;R-Squared (Mean)&#39;</span><span class="p">,</span> <span class="s1">&#39;R-Squared (Std)&#39;</span><span class="p">,</span> <span class="s1">&#39;MAE (Mean)&#39;</span><span class="p">,</span> <span class="s1">&#39;MAE (Std)&#39;</span><span class="p">])</span>
 
-<span class="n">df_results</span>
+<span class="n">results_table</span>
 </pre></div>
 
      </div>
@@ -15468,7 +15448,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[226]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[321]:</div>
 
 
 
@@ -15492,74 +15472,84 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr style="text-align: right;">
       <th></th>
       <th>Degree</th>
-      <th>MSE</th>
-      <th>R-Squared</th>
-      <th>MAE</th>
+      <th>R-Squared (Mean)</th>
+      <th>R-Squared (Std)</th>
+      <th>MAE (Mean)</th>
+      <th>MAE (Std)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>0</td>
-      <td>5.982413e+03</td>
-      <td>0.000000</td>
-      <td>6.576457e+01</td>
+      <td>-0.027506</td>
+      <td>0.036772</td>
+      <td>66.045624</td>
+      <td>3.474660</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
-      <td>2.993081e+03</td>
-      <td>0.517748</td>
-      <td>4.327745e+01</td>
+      <td>0.482316</td>
+      <td>0.049269</td>
+      <td>44.276499</td>
+      <td>2.100110</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
-      <td>1.209951e+04</td>
-      <td>0.216262</td>
-      <td>5.309728e+01</td>
+      <td>-1.108849</td>
+      <td>1.658661</td>
+      <td>72.322249</td>
+      <td>22.655922</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3</td>
-      <td>1.168776e+06</td>
-      <td>0.118958</td>
-      <td>5.844402e+01</td>
+      <td>-203.419417</td>
+      <td>225.878361</td>
+      <td>342.052260</td>
+      <td>142.438464</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4</td>
-      <td>3.402772e+06</td>
-      <td>1.000000</td>
-      <td>8.058853e-09</td>
+      <td>-571.083108</td>
+      <td>369.891883</td>
+      <td>657.260477</td>
+      <td>159.475902</td>
     </tr>
     <tr>
       <th>5</th>
       <td>5</td>
-      <td>2.644547e+06</td>
-      <td>1.000000</td>
-      <td>5.202514e-09</td>
+      <td>-436.856887</td>
+      <td>379.100423</td>
+      <td>562.993636</td>
+      <td>59.917202</td>
     </tr>
     <tr>
       <th>6</th>
       <td>6</td>
-      <td>1.056474e+07</td>
-      <td>1.000000</td>
-      <td>5.294524e-09</td>
+      <td>-1694.222101</td>
+      <td>2629.834958</td>
+      <td>742.589052</td>
+      <td>190.836052</td>
     </tr>
     <tr>
       <th>7</th>
       <td>7</td>
-      <td>3.475883e+07</td>
-      <td>1.000000</td>
-      <td>1.058780e-08</td>
+      <td>-5530.894075</td>
+      <td>9518.586954</td>
+      <td>1032.681725</td>
+      <td>393.439617</td>
     </tr>
     <tr>
       <th>8</th>
       <td>8</td>
-      <td>1.012450e+08</td>
-      <td>1.000000</td>
-      <td>8.232438e-09</td>
+      <td>-16076.255117</td>
+      <td>28049.952579</td>
+      <td>1475.658532</td>
+      <td>706.280274</td>
     </tr>
   </tbody>
 </table>
@@ -15577,21 +15567,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[227]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[322]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Summary</span>
-<span class="n">mean_mse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_mse</span><span class="p">)</span>
-<span class="n">mean_r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_r2</span><span class="p">)</span>
-<span class="n">mean_mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_mae</span><span class="p">)</span>
-<span class="n">std_mse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">cv_mse</span><span class="p">)</span>
-<span class="n">std_r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">cv_r2</span><span class="p">)</span>
-<span class="n">std_mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">cv_mae</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the mean and standard deviation of the metrics</span>
+
+<span class="n">mean_r2_all</span> <span class="o">=</span> <span class="n">results_table</span><span class="p">[</span><span class="s1">&#39;R-Squared (Mean)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_r2_all</span> <span class="o">=</span> <span class="n">results_table</span><span class="p">[</span><span class="s1">&#39;R-Squared (Mean)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">mean_mae_all</span> <span class="o">=</span> <span class="n">results_table</span><span class="p">[</span><span class="s1">&#39;MAE (Mean)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_mae_all</span> <span class="o">=</span> <span class="n">results_table</span><span class="p">[</span><span class="s1">&#39;MAE (Mean)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
 
 <span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-    <span class="p">{</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;MSE&#39;</span><span class="p">,</span> <span class="s1">&#39;R-Squared&#39;</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">],</span>
-     <span class="s1">&#39;Mean&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mean_mse</span><span class="p">,</span> <span class="n">mean_r2</span><span class="p">,</span> <span class="n">mean_mae</span><span class="p">],</span>
-     <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">std_mse</span><span class="p">,</span> <span class="n">std_r2</span><span class="p">,</span> <span class="n">std_mae</span><span class="p">]</span>
+    <span class="p">{</span><span class="s1">&#39;Metric&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;R-Squared&#39;</span><span class="p">,</span> <span class="s1">&#39;MAE&#39;</span><span class="p">],</span>
+     <span class="s1">&#39;Mean&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mean_r2_all</span><span class="p">,</span> <span class="n">mean_mae_all</span><span class="p">],</span>
+     <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="n">std_r2_all</span><span class="p">,</span> <span class="n">std_mae_all</span><span class="p">]</span>
      <span class="p">}</span>
 <span class="p">)</span>
 
@@ -15611,7 +15601,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[227]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[322]:</div>
 
 
 
@@ -15642,21 +15632,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   <tbody>
     <tr>
       <th>0</th>
-      <td>MSE</td>
-      <td>1.708953e+07</td>
-      <td>3.155562e+07</td>
+      <td>R-Squared</td>
+      <td>-2723.709416</td>
+      <td>5311.522620</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>R-Squared</td>
-      <td>6.503298e-01</td>
-      <td>4.113155e-01</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>MAE</td>
-      <td>2.450926e+01</td>
-      <td>2.794162e+01</td>
+      <td>555.097784</td>
+      <td>487.306636</td>
     </tr>
   </tbody>
 </table>
@@ -15685,13 +15669,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[228]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[323]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_model_r2</span> <span class="o">=</span> <span class="n">df_results</span><span class="p">[</span><span class="s1">&#39;R-Squared&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
-<span class="n">best_model_mae</span> <span class="o">=</span> <span class="n">df_results</span><span class="p">[</span><span class="s1">&#39;MAE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Best model based on R-Squared: Degree </span><span class="si">{</span><span class="n">best_model_r2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best model based on MAE: Degree </span><span class="si">{</span><span class="n">best_model_mae</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_model_r2</span> <span class="o">=</span> <span class="n">results_table</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">results_table</span><span class="p">[</span><span class="s1">&#39;R-Squared (Mean)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+<span class="n">best_model_mae</span> <span class="o">=</span> <span class="n">results_table</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">results_table</span><span class="p">[</span><span class="s1">&#39;MAE (Mean)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Best model based on R-Squared: </span><span class="si">{</span><span class="n">best_model_r2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best model based on MAE: </span><span class="si">{</span><span class="n">best_model_mae</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15712,8 +15697,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>
-Best model based on R-Squared: Degree 4
-Best model based on MAE: Degree 5
+Best model based on R-Squared: Degree               1.000000
+R-Squared (Mean)     0.482316
+R-Squared (Std)      0.049269
+MAE (Mean)          44.276499
+MAE (Std)            2.100110
+Name: 1, dtype: float64
+Best model based on MAE: Degree               1.000000
+R-Squared (Mean)     0.482316
+R-Squared (Std)      0.049269
+MAE (Mean)          44.276499
+MAE (Std)            2.100110
+Name: 1, dtype: float64
 </pre>
 </div>
 </div>
@@ -15729,7 +15724,7 @@ Best model based on MAE: Degree 5
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="The-best-model-will-consists-of-the-highest-R-Squared-value-and-the-lowest-MAE-value.">The best model will consists of the highest R-Squared value and the lowest MAE value.<a class="anchor-link" href="#The-best-model-will-consists-of-the-highest-R-Squared-value-and-the-lowest-MAE-value.">&#182;</a></h4><h4 id="Based-on-the-df_results,-the-models-with-the-highest-R-Squared-value-is-Degree-4-and-the-lowest-MAE-value-is-the-Degree-5">Based on the df_results, the models with the highest R-Squared value is Degree-4 and the lowest MAE value is the Degree-5<a class="anchor-link" href="#Based-on-the-df_results,-the-models-with-the-highest-R-Squared-value-is-Degree-4-and-the-lowest-MAE-value-is-the-Degree-5">&#182;</a></h4>
+<h4 id="The-best-model-will-consists-of-the-highest-R-Squared-value-and-the-lowest-MAE-value.">The best model will consists of the highest R-Squared value and the lowest MAE value.<a class="anchor-link" href="#The-best-model-will-consists-of-the-highest-R-Squared-value-and-the-lowest-MAE-value.">&#182;</a></h4><h4 id="Based-on-the-results_table,-the-models-with-the-highest-R-Squared-value-and-the-lowest-MAE-value-is-the-Degree:1">Based on the results_table, the models with the highest R-Squared value and the lowest MAE value is the Degree:1<a class="anchor-link" href="#Based-on-the-results_table,-the-models-with-the-highest-R-Squared-value-and-the-lowest-MAE-value-is-the-Degree:1">&#182;</a></h4>
 </div>
 </div>
 </div>
