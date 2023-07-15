@@ -15119,7 +15119,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
@@ -15135,7 +15135,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">])</span>
@@ -15169,7 +15169,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -15189,7 +15189,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initializing two 2-D matrices</span>
@@ -15223,44 +15223,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The matrix &#39;x&#39; is  tf.Tensor(
+<pre>The matrix x is  tf.Tensor(
 [[1. 3.]
  [5. 7.]], shape=(2, 2), dtype=float32)
-The matrix &#39;y&#39; is  tf.Tensor(
+The matrix y is  tf.Tensor(
 [[2. 4.]
  [6. 8.]], shape=(2, 2), dtype=float32)
+
+The result of multiplication is:
+
 </pre>
 </div>
 </div>
-<div class="jp-OutputArea-child">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">InvalidArgumentError</span>                      Traceback (most recent call last)
-Cell <span class="ansi-green-intense-fg ansi-bold">In[6], line 10</span>
-<span class="ansi-green-fg">      7</span> print(&#34;The matrix &#39;y&#39; is &#34;,y)
-<span class="ansi-green-fg">      9</span> # Matrix multiplication
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 10</span> matMultiplication = tf.matmul(a,b)
-<span class="ansi-green-fg">     11</span> print(&#34;\nThe result of multiplication is:\n&#34;, matMultiplication)
 
-File <span class="ansi-green-intense-fg ansi-bold">d:\Conestoga\FML\Git projects\CSCN8010\venv\CSCN8010_classic_ml\Lib\site-packages\tensorflow\python\util\traceback_utils.py:153</span>, in <span class="ansi-cyan-fg">filter_traceback.&lt;locals&gt;.error_handler</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
-<span class="ansi-green-fg">    151</span> except Exception as e:
-<span class="ansi-green-fg">    152</span>   filtered_tb = _process_traceback_frames(e.__traceback__)
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 153</span>   raise e.with_traceback(filtered_tb) from None
-<span class="ansi-green-fg">    154</span> finally:
-<span class="ansi-green-fg">    155</span>   del filtered_tb
 
-File <span class="ansi-green-intense-fg ansi-bold">d:\Conestoga\FML\Git projects\CSCN8010\venv\CSCN8010_classic_ml\Lib\site-packages\tensorflow\python\framework\ops.py:7262</span>, in <span class="ansi-cyan-fg">raise_from_not_ok_status</span><span class="ansi-blue-intense-fg ansi-bold">(e, name)</span>
-<span class="ansi-green-fg">   7260</span> def raise_from_not_ok_status(e, name):
-<span class="ansi-green-fg">   7261</span>   e.message += (&#34; name: &#34; + name if name is not None else &#34;&#34;)
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 7262</span>   raise core._status_to_exception(e) from None
-
-<span class="ansi-red-intense-fg ansi-bold">InvalidArgumentError</span>: {{function_node __wrapped__MatMul_device_/job:localhost/replica:0/task:0/device:CPU:0}} In[0] and In[1] ndims must be == 2: 1 [Op:MatMul]</pre>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;tf.Tensor: shape=(2, 2), dtype=float32, numpy=
+array([[20., 28.],
+       [52., 76.]], dtype=float32)&gt;</pre>
 </div>
+
 </div>
 
 </div>
